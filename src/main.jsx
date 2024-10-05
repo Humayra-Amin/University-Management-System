@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 import FacultyManagement from './components/FacultyManagement/FacultyManagement';
-import CourseRegistration from './components/Course Registration/Course Registration';
 import Home from './components/Home/Home';
+import CourseRegistration from './components/CourseRegistration/CourseRegistration';
 
 const router = createBrowserRouter([
   {
