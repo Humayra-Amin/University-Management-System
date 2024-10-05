@@ -102,7 +102,7 @@ const StudentDashboard = () => {
                       {student.courses.map((course) => (
                         <div
                           key={course.id}
-                          className="bg-white p-4 rounded-lg border-2 border-blue-500 hover:shadow-lg transition-shadow">
+                          className="bg-white p-4 rounded-lg border-2 border-gray-500 hover:shadow-lg">
                           <div className="flex justify-between">
                             <div>
                               <h4 className="text-[18px] font-semibold">{course.name}</h4>
@@ -110,7 +110,7 @@ const StudentDashboard = () => {
                             </div>
                             <button
                               onClick={() => toggleCourseDetails(course.id)}
-                              className="text-blue-500 hover:underline focus:outline-none">
+                              className="text-blue-500 hover:underline">
                               {selectedCourse === course.id ? 'Hide Details' : 'View Details'}
                             </button>
                           </div>
@@ -130,8 +130,8 @@ const StudentDashboard = () => {
 
             {activeSection === 'universityEvents' && (
               <div className="col-span-2">
-                <h2 className="text-2xl font-semibold mb-4 poppins">University Events</h2>
-                <div className="p-4 rounded-lg shadow-md border-2 border-blue-500">
+                <h2 className="text-2xl font-semibold mb-4 poppins">Upcoming Events</h2>
+                <div className="p-4 rounded-lg shadow-md border-2 border-gray-500">
                   <ul className="space-y-3 text-xl">
                     {universityEvents.map((event) => (
                       <li key={event.id} className="flex justify-between">
