@@ -9,16 +9,16 @@ const StudentDashboard = () => {
       id: 1,
       name: 'Alice Johnson',
       courses: [
-        { id: 1, name: 'Web Development', grade: 'A', professor: 'John Doe', email: 'john.doe@university.edu' },
-        { id: 2, name: 'Database Systems', grade: 'B+', professor: 'Jane Smith', email: 'jane.smith@university.edu' },
+        { id: 1, name: 'Web Development', grade: 'A', professor: 'John Doe', email: 'john.doe@uni.edu' },
+        { id: 2, name: 'Database Systems', grade: 'B+', professor: 'Jane Smith', email: 'jane.smith@uni.edu' },
       ],
     },
     {
       id: 2,
       name: 'Bob Smith',
       courses: [
-        { id: 1, name: 'Machine Learning', grade: 'A-', professor: 'Emily Johnson', email: 'emily.johnson@university.edu' },
-        { id: 2, name: 'Artificial Intelligence', grade: 'B+', professor: 'Michael Clark', email: 'michael.clark@university.edu' },
+        { id: 3, name: 'Machine Learning', grade: 'A-', professor: 'Emily Johnson', email: 'emily.johnson@uni.edu' },
+        { id: 4, name: 'Artificial Intelligence', grade: 'B+', professor: 'Michael Clark', email: 'michael.clark@uni.edu' },
       ],
     },
   ];
@@ -88,7 +88,7 @@ const StudentDashboard = () => {
         <div className="flex-1 p-6">
 
           <div>
-            <h1 className="text-5xl text-center font-semibold poppins">Student Portal</h1>
+            <h1 className="text-5xl text-center font-semibold playfair">Student Portal</h1>
           </div>
 
           {/* Dashboard */}
@@ -100,27 +100,26 @@ const StudentDashboard = () => {
                     <h3 className="text-xl font-semibold text-blue-700 mb-4">{student.name}</h3>
                     <div className="space-y-4">
                       {student.courses.map((course) => (
-                        <div
-                          key={course.id}
-                          className="bg-white p-4 rounded-lg border-2 border-gray-500 hover:shadow-lg">
-                          <div className="flex justify-between">
-                            <div>
-                              <h4 className="text-[18px] font-semibold">{course.name}</h4>
-                              <p className="text-gray-600 text-[16px]">Grade: {course.grade}</p>
-                            </div>
-                            <button
-                              onClick={() => toggleCourseDetails(course.id)}
-                              className="text-blue-500 hover:underline">
-                              {selectedCourse === course.id ? 'Hide Details' : 'View Details'}
-                            </button>
+                        <div key={course.id} className="p-4 rounded-lg border-2 border-gray-500 hover:shadow-lg">
+                        <div className="flex flex-col justify-between">
+                          <div>
+                            <h4 className="text-[18px] font-semibold">{course.name}</h4>
+                            <p className="text-gray-600 text-[16px]">Grade: {course.grade}</p>
                           </div>
-                          {selectedCourse === course.id && (
-                            <div className="mt-3 text-[18px] text-gray-700">
-                              <p><span className='font-semibold poppins'>Professor:</span> {course.professor}</p>
-                              <p><span className='font-semibold poppins'>Contact:</span> {course.email}</p>
-                            </div>
-                          )}
+                          <button
+                            onClick={() => toggleCourseDetails(course.id)}
+                            className="text-blue-500 hover:underline mt-0 ml-4">
+                            {selectedCourse === course.id ? 'Hide Details' : 'View Details'}
+                          </button>
                         </div>
+                        {selectedCourse === course.id && (
+                          <div className="mt-3 text-sm lg:text-[18px] text-gray-700 leading-8">
+                            <p><span className='font-semibold poppins'>Professor:</span> {course.professor}</p>
+                            <p><span className='font-semibold poppins'>Contact:</span> {course.email}</p>
+                          </div>
+                        )}
+                      </div>
+                      
                       ))}
                     </div>
                   </div>

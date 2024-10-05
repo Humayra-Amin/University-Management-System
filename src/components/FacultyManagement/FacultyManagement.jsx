@@ -10,7 +10,7 @@ const FacultyManagement = () => {
       designation: 'Professor of Computer Science',
       subject: 'Artificial Intelligence',
       officeHours: 'Mon, Wed, Fri: 10 AM - 12 PM',
-      email: 'emily.carter@university.edu',
+      email: 'emily.carter@uni.edu',
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const FacultyManagement = () => {
       designation: 'Assistant Professor of Mathematics',
       subject: 'Calculus',
       officeHours: 'Tue, Thu: 1 PM - 3 PM',
-      email: 'mark.reynolds@university.edu',
+      email: 'mark.reynolds@uni.edu',
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ const FacultyManagement = () => {
       designation: 'Associate Professor of Chemistry',
       subject: 'Organic Chemistry',
       officeHours: 'Mon, Wed: 2 PM - 4 PM',
-      email: 'sarah.johnson@university.edu',
+      email: 'sarah.johnson@uni.edu',
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ const FacultyManagement = () => {
       designation: 'Lecturer of Physics',
       subject: 'Quantum Physics',
       officeHours: 'Fri: 10 AM - 1 PM',
-      email: 'john.smith@university.edu',
+      email: 'john.smith@uni.edu',
     },
   ];
 
@@ -57,7 +57,7 @@ const FacultyManagement = () => {
         <link rel="icon" type="image/jpg" href="/src/assets/images/logos.jpg" />
       </Helmet>      
       <div>
-        <h1 className="text-5xl text-center font-semibold poppins">Faculty Overview</h1>
+        <h1 className="text-5xl text-center font-semibold playfair">Faculty Overview</h1>
       </div>
 
       {/* Search */}
