@@ -28,7 +28,7 @@ const Navbar = () => {
       </Link>
 
       {/* Navigation */}
-      <div className={`space-x-0 md:space-x-10 lg:space-x-28 text-lg flex flex-col md:flex-row items-center justify-center absolute md:static w-[50%] md:w-auto bg-[#363636] md:bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'top-[85px]' : 'top-[-300px]'}`}>
+      <div className={`space-x-0 md:space-x-10 lg:space-x-28 text-lg poppins flex flex-col md:flex-row items-center justify-center absolute md:static w-[50%] md:w-auto bg-[#363636] md:bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'top-[85px]' : 'top-[-300px]'}`}>
         <a href="/" className="flex items-center space-x-3 py-2 md:py-0">
           <span>Home</span>
           <FaChevronDown className="text-xs" />

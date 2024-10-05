@@ -1,13 +1,12 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
-import { Outlet } from 'react-router-dom';
+
 import { Helmet } from 'react-helmet';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
         <div>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
+            <Banner></Banner>
             <Helmet>
                 <title>UMS | Home</title>
                 <link rel="icon" type="image/jpg" href="/src/assets/images/logos.jpg" />
