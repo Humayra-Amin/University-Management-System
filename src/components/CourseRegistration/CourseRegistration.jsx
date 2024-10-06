@@ -29,7 +29,7 @@ const CourseRegistration = () => {
     };
 
     return (
-<div className="min-h-screen p-6 bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }}>
+        <div className="min-h-screen p-6 bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }}>
 
             <Helmet>
                 <title>UMS | Course Registration</title>

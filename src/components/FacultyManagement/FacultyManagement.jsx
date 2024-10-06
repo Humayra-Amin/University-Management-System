@@ -52,10 +52,12 @@ const FacultyManagement = () => {
 
   return (
     <div className="min-h-screen p-6">
+
       <Helmet>
         <title>UMS | Faculty Management</title>
         <link rel="icon" type="image/jpg" href="/src/assets/images/logos.jpg" />
-      </Helmet>      
+      </Helmet>  
+          
       <div>
         <h1 className="text-5xl text-center font-semibold playfair">Faculty Overview</h1>
       </div>
