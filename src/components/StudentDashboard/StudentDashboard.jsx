@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const StudentDashboard = () => {
   const navigate = useNavigate();
+  
   const students = [
     {
       id: 1,
@@ -36,6 +37,11 @@ const StudentDashboard = () => {
     setSelectedCourse(selectedCourse === courseId ? null : courseId);
   };
 
+  const handleLogout = () => {
+    console.log("User logged out");
+    navigate('/');
+  };
+
   return (
     <div>
       <Helmet>
@@ -43,6 +49,7 @@ const StudentDashboard = () => {
         <link rel="icon" type="image/jpg" href="/src/assets/images/logos.jpg" />
       </Helmet>
       <div className="min-h-screen flex">
+        
         {/* Sidebar */}
         <div className="w-[280px] bg-blue-600 text-white p-6">
           <h2 className="text-2xl font-semibold mb-6 playfair">Student Dashboard</h2>
@@ -81,12 +88,19 @@ const StudentDashboard = () => {
                   Course Registration
                 </button>
               </li>
+              <hr className='border-dashed'/>
+              <li className="mb-4 mt-80">
+                <button
+                  onClick={handleLogout}
+                  className="block w-full p-2 text-[16px] poppins rounded-lg bg-red-600 hover:bg-red-700">
+                  Logout
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
 
         <div className="flex-1 p-6">
-
           <div>
             <h1 className="text-5xl text-center font-semibold playfair">Student Portal</h1>
           </div>
@@ -101,25 +115,24 @@ const StudentDashboard = () => {
                     <div className="space-y-4">
                       {student.courses.map((course) => (
                         <div key={course.id} className="p-4 rounded-lg border-2 border-gray-500 hover:shadow-lg">
-                        <div className="flex flex-col justify-between">
-                          <div>
-                            <h4 className="text-[18px] font-semibold">{course.name}</h4>
-                            <p className="text-gray-600 text-[16px]">Grade: {course.grade}</p>
+                          <div className="flex flex-col justify-between">
+                            <div>
+                              <h4 className="text-[18px] font-semibold">{course.name}</h4>
+                              <p className="text-gray-600 text-[16px]">Grade: {course.grade}</p>
+                            </div>
+                            <button
+                              onClick={() => toggleCourseDetails(course.id)}
+                              className="text-blue-500 hover:underline mt-0 ml-4">
+                              {selectedCourse === course.id ? 'Hide Details' : 'View Details'}
+                            </button>
                           </div>
-                          <button
-                            onClick={() => toggleCourseDetails(course.id)}
-                            className="text-blue-500 hover:underline mt-0 ml-4">
-                            {selectedCourse === course.id ? 'Hide Details' : 'View Details'}
-                          </button>
+                          {selectedCourse === course.id && (
+                            <div className="mt-3 text-sm lg:text-[18px] text-gray-700 leading-8">
+                              <p><span className='font-semibold poppins'>Professor:</span> {course.professor}</p>
+                              <p><span className='font-semibold poppins'>Contact:</span> {course.email}</p>
+                            </div>
+                          )}
                         </div>
-                        {selectedCourse === course.id && (
-                          <div className="mt-3 text-sm lg:text-[18px] text-gray-700 leading-8">
-                            <p><span className='font-semibold poppins'>Professor:</span> {course.professor}</p>
-                            <p><span className='font-semibold poppins'>Contact:</span> {course.email}</p>
-                          </div>
-                        )}
-                      </div>
-                      
                       ))}
                     </div>
                   </div>
