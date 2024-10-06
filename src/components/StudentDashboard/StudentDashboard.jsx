@@ -139,21 +139,24 @@ const StudentDashboard = () => {
               </div>
             )}
 
-            {activeSection === 'universityEvents' && (
-              <div className="col-span-2">
-                <h2 className="text-2xl font-semibold mb-4 poppins">Upcoming Events</h2>
-                <div className="p-4 rounded-lg shadow-md border-2 border-gray-500">
-                  <ul className="space-y-3 text-xl">
-                    {universityEvents.map((event) => (
-                      <li key={event.id} className="flex justify-between">
-                        <span className="font-medium">{event.title}</span>
-                        <span>{event.date}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
+{activeSection === 'universityEvents' && (
+  <div className="col-span-2">
+    <h2 className="text-2xl font-semibold mb-4 poppins mt-8">Upcoming Events</h2>
+    <div className="p-4 rounded-lg shadow-md border-2 border-gray-500">
+      <ul className="space-y-3 text-xl">
+        {universityEvents.map((event) => (
+          <li 
+            key={event.id} 
+            className="grid grid-cols-1 lg:grid-cols-2 justify-between space-y-2 lg:space-y-0">
+            <span className="font-medium">{event.title}</span>
+            <span>{event.date}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}
+
           </section>
         </div>
       </div>
