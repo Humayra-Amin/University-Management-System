@@ -39,18 +39,18 @@ const Login = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }}>
+        <div className="relative min-h-screen bg-cover" style={{ backgroundImage: `url(${bg})` }}>
             <Helmet>
                 <title>UMS | Login</title>
                 <link rel="icon" type="image/jpg" href="/src/assets/images/logos.jpg" />
             </Helmet>
 
-            <div className="absolute top-28 left-20 p-4 poppins font-bold text-yellow-500 z-10">
-                <h1 className="text-5xl">University Management System</h1>
-                <h2 className="text-5xl text-center mt-8">UMS</h2>
+            <div className="absolute lg:top-28 lg:left-20 p-4 poppins font-bold text-yellow-500 z-10">
+                <h1 className="lg:text-5xl text-[23px]">University Management System</h1>
+                <h2 className="lg:text-5xl text-center text-[23px] lg:mt-8">UMS</h2>
             </div>
      
-            <div className="absolute right-28 top-10 flex items-center justify-center w-[25%] h-[90%] p-8 bg-blue-900 shadow-lg">
+            <div className="absolute lg:right-28 lg:top-10 mt-28 lg:mt-0 ml-14 lg:ml-0 flex items-center justify-center lg:w-[25%] lg:h-[90%] p-8 bg-blue-900 shadow-lg">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 w-full">
 
                     <div className="flex justify-center mb-4">
@@ -115,6 +115,9 @@ const Login = () => {
                     </div>
 
                     <Sociallogin></Sociallogin>
+
+                    <h3 className="text-center text-white">Developed by UMS</h3>
+                    
                 </form>
             </div>
 
